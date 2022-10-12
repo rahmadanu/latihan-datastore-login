@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">latihan-datastore-login</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="or_register_here">Or Register here</string>
+    <string name="title_register">Register</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_confirm_password">Confirm Password</string>
+</resources>
