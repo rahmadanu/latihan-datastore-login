@@ -7,7 +7,6 @@ import androidx.lifecycle.viewModelScope
 import com.binar.latihan_datastore_login.data.LoginDataStoreManager
 import com.binar.latihan_datastore_login.data.UserPreferences
 import kotlinx.coroutines.launch
-import java.util.concurrent.Flow
 
 class LoginViewModel(private val pref: LoginDataStoreManager): ViewModel() {
 
@@ -21,7 +20,17 @@ class LoginViewModel(private val pref: LoginDataStoreManager): ViewModel() {
         }
     }
 
+    fun setProfileImage(uri: String) {
+        viewModelScope.launch {
+            pref.setProfileImage(uri)
+        }
+    }
+
     fun getUserLogin(): LiveData<Boolean> {
         return pref.getUserLogin().asLiveData()
+    }
+
+    fun getUserProfileImage(): LiveData<String> {
+        return pref.getUserProfileImage().asLiveData()
     }
 }
